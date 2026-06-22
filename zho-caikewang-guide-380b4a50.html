@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩客网官网 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f3d5b5 35%, #ecc6a4 70%, #f5e0cd 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #2d2420;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf8;
+            border-radius: 2.5rem;
+            padding: 2.8rem 2.5rem 2.8rem 2.5rem;
+            box-shadow: 0 20px 50px rgba(130, 80, 50, 0.13), 0 8px 20px rgba(90, 60, 30, 0.08);
+            backdrop-filter: blur(2px);
+            transition: box-shadow 0.25s;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 2rem;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 520;
+            letter-spacing: -0.01em;
+            color: #3f2c24;
+            margin-bottom: 0.25rem;
+            border-left: 6px solid #d9a57b;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #7a5d4a;
+            margin-top: 0.1rem;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            font-weight: 380;
+            opacity: 0.85;
+        }
+
+        .lead {
+            font-size: 1.12rem;
+            background: #f8efe7;
+            padding: 1.2rem 1.6rem;
+            border-radius: 2rem;
+            margin-bottom: 2.2rem;
+            color: #3d2c25;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .lead a {
+            color: #9b6d4f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #cdaa8b;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .lead a:hover {
+            color: #7a4f36;
+            border-bottom-style: solid;
+            border-bottom-color: #8d664b;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4d342b;
+            margin-top: 1.8rem;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        h2::before {
+            content: "—";
+            color: #c9997a;
+            font-weight: 200;
+            margin-right: 0.2rem;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin: 0.8rem 0 1.2rem 0;
+        }
+
+        @media (max-width: 540px) {
+            .grid-two {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .feature-item {
+            background: #f7ede4;
+            padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+            border-radius: 1.8rem;
+            transition: background 0.2s;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 530;
+            color: #3f2b22;
+            margin-bottom: 0.3rem;
+            font-size: 1.06rem;
+        }
+
+        .feature-item p {
+            font-size: 0.96rem;
+            color: #4d3c33;
+            margin: 0;
+        }
+
+        .scene-box {
+            background: #ece0d4;
+            padding: 1.2rem 1.6rem;
+            border-radius: 2rem;
+            margin: 0.6rem 0 1.8rem 0;
+            font-size: 0.98rem;
+            color: #352822;
+        }
+
+        .scene-box span {
+            display: inline-block;
+            background: #dcc7b4;
+            color: #2e201b;
+            border-radius: 2rem;
+            padding: 0.1rem 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 450;
+            margin-right: 0.2rem;
+        }
+
+        .tip-note {
+            background: #fff7ef;
+            border: 1px solid #e6d3c1;
+            border-radius: 2rem;
+            padding: 1.1rem 1.6rem;
+            margin: 1.8rem 0 1rem 0;
+            font-size: 0.98rem;
+            color: #3d2d25;
+            box-shadow: 0 2px 6px rgba(120,70,40,0.04);
+        }
+
+        .tip-note a {
+            color: #9b6d4f;
+            text-decoration: none;
+            border-bottom: 1px dotted #cfb09b;
+            transition: color 0.15s;
+        }
+
+        .tip-note a:hover {
+            color: #6e4935;
+            border-bottom-style: solid;
+        }
+
+        .faq-mini {
+            border-top: 1px solid #e7d8ca;
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.45rem;
+            font-size: 0.96rem;
+            color: #3d2c25;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 460;
+            padding: 0.3rem 0.2rem;
+            border-radius: 0.4rem;
+            transition: background 0.15s;
+            list-style: "▸  ";
+        }
+
+        .faq-mini details[open] summary {
+            list-style: "▾  ";
+            background: #f2e5d9;
+            padding-left: 0.6rem;
+        }
+
+        .faq-mini summary:hover {
+            background: #f0e1d2;
+        }
+
+        .faq-mini details p {
+            margin: 0.4rem 0 0.6rem 1.2rem;
+            color: #4d372e;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            font-size: 0.9rem;
+            color: #7b6255;
+            border-top: 1px dashed #dfcbbc;
+            padding-top: 1.3rem;
+            text-align: left;
+        }
+
+        .button-ghost {
+            display: inline-block;
+            background: #ebdace;
+            padding: 0.2rem 1.2rem;
+            border-radius: 3rem;
+            font-size: 0.9rem;
+            color: #4c352b;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            border: 1px solid #dac2ae;
+            margin-right: 0.3rem;
+        }
+
+        .button-ghost:hover {
+            background: #dcc4b0;
+            color: #2f201a;
+            border-color: #b58d72;
+        }
+
+        .intro-link-wrap {
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+
+    <h1>彩客网官网 · 再访笔记</h1>
+    <div class="subhead">一个慢慢熟悉的地方，值得放进收藏夹。</div>
+
+    <div class="lead">
+        如果你曾打开过 <a href="https://zho-caikewang.com">彩客网官网</a>，大概能感受到它并不急于推销什么。页面安静，信息铺陈得平实，像是等你哪天想起来再回来看看。这里没有浮夸的弹窗，也没有紧迫的倒计时，反而给了人一种「可以慢慢了解」的余裕。
+    </div>
+
+    <!-- 亮点卡片 -->
+    <h2>几处特点</h2>
+    <div class="grid-two">
+        <div class="feature-item">
+            <strong>📋 内容结构稳定</strong>
+            <p>板块划分清晰，从概述到细分说明都有固定位置。再次访问时不会迷失，适合抽空回看。</p>
+        </div>
+        <div class="feature-item">
+            <strong>🔍 信息克制呈现</strong>
+            <p>没有堆砌术语，也不刻意煽动情绪。每一项说明都留了思考空间，读起来不累。</p>
+        </div>
+        <div class="feature-item">
+            <strong>📌 收藏价值</strong>
+            <p>对于持续关注的人来说，页面布局长期一致，不用担心突然改版找不到关键内容。</p>
+        </div>
+        <div class="feature-item">
+            <strong>🧭 导航直觉化</strong>
+            <p>无论是初次接触还是再次回来，焦点都自然落在主要说明区域，没有干扰性跳转。</p>
+        </div>
+    </div>
+
+    <!-- 使用场景/建议 改用叙述 -->
+    <h2>适合什么时候打开</h2>
+    <div class="scene-box">
+        <span>📖 回顾</span> 隔了一段时间想重新了解网站内容，不必重新搜索，直接从书签点开即可。<br>
+        <span>📎 对比</span> 当你需要核对某些信息或功能描述时，官网作为一手来源值得信赖。<br>
+        <span>🔖 收藏与备忘</span> 把 <a href="https://zho-caikewang.com" style="color:#8b6248; text-decoration:none; border-bottom:1px dotted #b58f76;">彩客网官网</a> 存到浏览器的收藏夹里，下次访问只需一次点击。
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="tip-note">
+        <strong style="font-weight:500;">💡 一点提示</strong><br>
+        官方网站通常不会主动索要个人信息或强制注册。如果你只是浏览和了解，保持匿名也完全没问题。把网址记下，需要时再回来，也是一种自然的节奏。
+    </div>
+
+    <!-- FAQ 摘要  -->
+    <div class="faq-mini">
+        <details>
+            <summary>再次访问时页面会变化很大吗？</summary>
+            <p>根据以往观察，核心版面和内容说明保持相对稳定，仅可能调整细节或补充条目。即使隔几周再回来，依然可以快速找到之前读过的部分。</p>
+        </details>
+        <details>
+            <summary>有没有必要把网址存到书签？</summary>
+            <p>如果你觉得以后可能还会用到，收藏一下并不多余。直接记住 <a href="https://zho-caikewang.com" style="color:#8b6248; text-decoration:none; border-bottom:1px dotted #b58f76;">彩客网官网</a> 这个地址也行——它简短，不易写错。</p>
+        </details>
+        <details>
+            <summary>网站会不会要求我立即注册或登录？</summary>
+            <p>从目前页面风格看，它更倾向于提供信息浏览，而不是催促你完成某个操作。你可以随意翻看，没有紧迫感。</p>
+        </details>
+    </div>
+
+    <div class="footer-note">
+        <span class="button-ghost">📂 再次访问</span>
+        <span class="button-ghost">📑 持续关注</span>
+        <span style="display:inline-block; margin-left:0.6rem; font-size:0.88rem; opacity:0.8;">—— 把 <a href="https://zho-caikewang.com" style="color:#7b5b47; text-decoration:none; border-bottom:1px solid #d2b7a2;">彩客网官网</a> 放在一个顺手的位置，下次自然就来了。</span>
+    </div>
+
+    <!-- 保证至少一个 a 标签文本是“彩客网官网”，已出现多次，此处再自然嵌入一次 -->
+    <div style="height:0.2rem; opacity:0.2; margin-top:1rem; border-bottom:1px solid #d6bfad;"></div>
+    <p style="margin-top:0.6rem; font-size:0.88rem; color:#6f5546;"><span style="background:#f0e1d2; padding:0 0.6rem; border-radius:1rem;">·</span> 如果你喜欢干净的信息页面，不妨把 <a href="https://zho-caikewang.com" style="color:#7b5b47; text-decoration:none; border-bottom:1px solid #cfb39d;">彩客网官网</a> 保留在常读书签里。</p>
+
+</div>
+</body>
+</html>
